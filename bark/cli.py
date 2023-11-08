@@ -3,8 +3,8 @@ from typing import Dict, Optional, Union
 import os
 
 from scipy.io.wavfile import write as write_wav
-from .api import generate_audio
-from .generation import SAMPLE_RATE
+from bark.api import generate_audio
+from bark.generation import SAMPLE_RATE
 
 
 def cli():

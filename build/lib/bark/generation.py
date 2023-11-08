@@ -71,7 +71,7 @@ SUPPORTED_LANGS = [
 ALLOWED_PROMPTS = {"announcer"}
 for _, lang in SUPPORTED_LANGS:
     for prefix in ("", f"v2{os.path.sep}"):
-        for n in range(10):
+        for n in range(11):
             ALLOWED_PROMPTS.add(f"{prefix}{lang}_speaker_{n}")
 
 
@@ -359,8 +359,8 @@ def _load_history_prompt(history_prompt_input):
     elif isinstance(history_prompt_input, str):
         # make sure this works on non-ubuntu
         history_prompt_input = os.path.join(*history_prompt_input.split("/"))
-        if history_prompt_input not in ALLOWED_PROMPTS:
-            raise ValueError("history prompt not found")
+        #if history_prompt_input not in ALLOWED_PROMPTS:
+         #   raise ValueError("history prompt not found")
         history_prompt = np.load(
             os.path.join(CUR_PATH, "assets", "prompts", f"{history_prompt_input}.npz")
         )
